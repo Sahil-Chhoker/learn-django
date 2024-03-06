@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>
+    {% if object.title == null %}
+        I ain't got no stuff
+    {% endif %}
+</h1>
+<p>
+    {% if object.description == null %}
+        damn that description
+    {% endif %}
+</p>
+
+{% endblock content %}
+
+
+
