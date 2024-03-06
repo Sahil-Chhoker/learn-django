@@ -4,19 +4,22 @@
     <h1>About</h1>
     <p>nothing</p>
 
+<h3>{{ title|capfirst|title }}</h3>
+
+{{ my_html|striptags|slugify }}
 
 <p>
-    {{ my_text }}, {{ my_number }}
+    {{ my_number }}
 </p>
 
 <ul>
-{% for my_sub_item in my_list %}
-    {% if my_sub_item == 123 %}
-        <li>{{ forloop.counter }} - {{ my_sub_item|add:22 }}</li> 
-    {% elif my_sub_item == 4242 %}
-        <li>{{ forloop.counter }} - {{ my_sub_item|add:90 }}</li> 
+{% for abc in my_list %}
+    {% if abc == 123 %}
+        <li>{{ forloop.counter }} - {{ abc|add:22 }}</li> 
+    {% elif abc == 4242 %}
+        <li>{{ forloop.counter }} - {{ abc|add:90 }}</li> 
     {% else %}
-        <li>{{ forloop.counter }} - {{ my_sub_item }}</li>
+        <li>{{ forloop.counter }} - {{ abc }}</li>
     {% endif %}
 
     {% endfor %}
