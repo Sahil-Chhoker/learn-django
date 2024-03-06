@@ -6,18 +6,20 @@
 
 
 <p>
-    {{ my_text }}, {{ my_number }}k
+    {{ my_text }}, {{ my_number }}
 </p>
 
 <ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-</ul>
-
-<ul>
 {% for my_sub_item in my_list %}
-    <li>{{ forloop.counter }} - {{ my_sub_item }}</li>
-{% endfor %}
+    {% if my_sub_item == 123 %}
+        <li>{{ forloop.counter }} - {{ my_sub_item|add:22 }}</li> 
+    {% elif my_sub_item == 4242 %}
+        <li>{{ forloop.counter }} - {{ my_sub_item|add:90 }}</li> 
+    {% else %}
+        <li>{{ forloop.counter }} - {{ my_sub_item }}</li>
+    {% endif %}
+
+    {% endfor %}
 </ul>
 
 {% endblock%}
