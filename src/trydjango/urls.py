@@ -21,11 +21,12 @@ from pages.views import home_view
 from pages.views import contact_view
 from pages.views import about_view
 from pages.views import social_view
-from products.views import product_detail_view
+from products.views import product_detail_view, product_create_view
 
 urlpatterns = [
     path('', home_view, name='home'),
     path('contact/', contact_view),
+    path('create/', product_create_view),
     path('product/', product_detail_view),
     path('about/', about_view),
     path('social/', social_view),
